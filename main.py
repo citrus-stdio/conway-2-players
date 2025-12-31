@@ -115,3 +115,43 @@ placeBoard(board,texturize(blocks[0].shape,"X"),7,0)
 
 placeRender(render,board,0,0)
 displayRender()
+'''
+
+i = 0
+while i<50:
+    render = fillRender(30,11)
+    
+    
+    tminustwo = tminusone
+    tminusone = board
+    board = newBoard(board,p1char,p2char)
+    placeRender(render,board,1,1)
+    displayRender()
+    
+    #check winstate
+    p1 = p1count(board,p1char)
+    p2 = p2count(board,p2char)
+    
+    if p1>0 and p2==0:
+        render = fillRender(30,11)
+        placeRender(render,[list("PLAYER010WINS")],5,5)
+        displayRender()
+        break
+    if p2>0 and p1==0:
+        render = fillRender(30,11)
+        placeRender(render,[list("PLAYER020WINS")],5,5)
+        displayRender()
+        break
+    if tminusone == board:
+        render = fillRender(30,11)
+        placeRender(render,[list("TIE0GAME")],5,5)
+        displayRender()
+        break
+    if tminustwo == board:
+        render = fillRender(30,11)
+        placeRender(render,[list("TIE0GAME")],5,5)
+        displayRender()
+        break
+        
+    i+=1
+    input("")
