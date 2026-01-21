@@ -96,7 +96,7 @@ input("Resize the console until you can see both X's, then press enter to contin
 render = fillRender(30,11)
 '''
 
-#testing \/
+#testing
 
 test = [["X","X","X"],[0,0,0],["Y","Y","Y"]]
 
